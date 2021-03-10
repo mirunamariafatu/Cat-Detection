@@ -1,0 +1,39 @@
+Fatu Miruna-Maria
+311CA
+
+Part 3 - Householder Prediction
+
+RgbHistogram:
+	- se construiesc matricile red, green, blue extrase din img
+	- cu ajutorul functiei idivide acestea sunt scalate la intervalul dorit
+	- intrucat idivide va returna si 0, iar functia accumarray primeste pozitiile elementelor (pozitia 0 nu exista), adaugam +1
+	- se creeaza histogramele care vor fi adaugate in sol
+HsvHistogram:
+	- fiecare pixel din r,g si b va fi transformat in h, s, v
+	- analog RgbHistogram
+SSt si Householder:
+	- urmeaza algoritmul prezentat la seminarii
+Preprocess:
+	- mai intai sunt extrase histogramele pozelor cu pisici, apoi cele fara pisici
+	- matricea X contine toate histogramele pozelor, iar y etichetele pozelor (1 sau -1)
+Learn si Evaluate:
+	- evaluate este construita asemanator cu preprocess
+	- se obtine w si se construieste noul y
+	- variabila corect creste de fiecare data cand conditia de poza cu pisici/fara pisici este indeplinita
+
+Part 4 - Gradient Descent Prediction
+
+Learn :
+	- scalez matricea X si adaug coloana finala de 1
+	- generez vectorul coloana w dupa algoritmul Mini-batch Gradient Descent
+Evaluate:
+	- cu functia preprocess generez toate histogramele imaginilor in matricea X
+	- scalez matricea X si adaug coloana finala de 1
+	- construiesc noul y
+	- pentru fiecare set de poze(cu pisici si fara pisici) verific daca acestea au fost corect identificate, in caz afirmativ variabila corect este incrementata
+	- calculez procentajul imaginilor corect identificate
+	
+
+	
+
+
